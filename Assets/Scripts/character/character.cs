@@ -1,0 +1,136 @@
+﻿using UnityEngine;
+using System.Collections;
+using System;
+
+public class character : MonoBehaviour {
+
+    Animator animator;
+
+    public GameObject ExplodeUL;
+    public GameObject ExplodeUR;
+    public GameObject ExplodeDL;
+    public GameObject ExplodeDR;
+
+    public GameObject[] KaratekaSprites;
+
+    public bool isLeft = false;
+    public bool inputEnabled;
+
+    public void Start() {
+        inputEnabled = true;
+        animator = GetComponent<Animator>();
+        isLeft = false;
+        LevelManager.looseGame += disableInput;
+    }
+
+    public void changeSprite(Sprite up, Sprite down, Sprite iddle)
+    {
+
+
+    }
+
+    public void disableInput() {
+        inputEnabled = false;
+    }
+
+    public bool canPunch() {
+        return (inputEnabled && animator.GetCurrentAnimatorStateInfo(0).IsName("Iddle"));
+    }
+
+    public void rotateSprites()
+    {
+        for (int i = 0; i < KaratekaSprites.Length; i++)
+        {
+            KaratekaSprites[i].transform.Rotate(0, 180, 0);
+
+        }
+    }
+
+    public void Punch(string direction)
+    {
+        if (!canPunch())
+            return;
+
+        if (direction == "UL")
+        {
+            animator.SetTrigger("UpAttack");
+            if (!isLeft)
+            {
+                rotateSprites();
+                isLeft = true;
+            }
+        }
+        else if (direction == "UR")
+        {
+            animator.SetTrigger("UpAttack");
+            if (isLeft)
+            {
+                rotateSprites();
+                isLeft = false;
+            }
+        }
+        else if (direction == "DL")
+        {
+            animator.SetTrigger("MiddleAttack");
+            if (!isLeft)
+            {
+                rotateSprites();
+                isLeft = true;
+            }
+
+        }
+        else if (direction == "DR")
+        {
+            animator.SetTrigger("MiddleAttack");
+            if (isLeft)
+            {
+                rotateSprites();
+                isLeft = false;
+            }
+        }
+    }
+
+
+        public void Avoid(string direction)
+    {
+        if (direction == "Down")
+        {
+            animator.SetTrigger("Down");
+        }
+        else if (direction == "Jump")
+        {
+            animator.SetTrigger("Jump");
+
+        }
+        
+    }
+
+    public void KickExplode(string direction)
+    {
+        if (direction == "UL")
+        {
+            ExplodeUL.GetComponent<ParticleSystem>().Play();
+        }
+        else if (direction == "UR")
+        {
+            ExplodeUR.GetComponent<ParticleSystem>().Play();
+        }
+        else if (direction == "DL")
+        {
+            ExplodeDL.GetComponent<ParticleSystem>().Play();
+        }
+        else if (direction == "DR")
+        {
+            ExplodeDR.GetComponent<ParticleSystem>().Play();
+        }
+    }
+
+    public void Hurt() {
+
+        animator.SetTrigger("Hurt");
+
+    }
+
+
+
+}
