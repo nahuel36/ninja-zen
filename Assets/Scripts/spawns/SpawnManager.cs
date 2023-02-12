@@ -43,7 +43,7 @@ public class SpawnManager : MonoBehaviour {
 
             lastSpawnTime = 0;
 
-            if(spawnTime > 0.5f)
+            if(spawnTime > 2f)
                 spawnTime -= Time.deltaTime;
         }
         lastSpawnTime += Time.deltaTime;
