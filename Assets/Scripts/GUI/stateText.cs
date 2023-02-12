@@ -13,7 +13,7 @@ public class stateText : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
-        if (LevelManager.Instance.lifes > 0)
+        if (LevelManager.Instance.lifes >= 0)
         {
             ScoreText.text = LevelManager.Instance.ActualScore.ToString();
             MasScoreText.text = LevelManager.Instance.HighScore.ToString();
