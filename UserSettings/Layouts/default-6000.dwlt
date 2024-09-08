@@ -1930,7 +1930,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 79.200005
+    y: 24
     width: 250.2
     height: 477.2
   m_SerializedDataModeController:
@@ -1947,8 +1947,8 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 9e970000
-      m_LastClickedID: 38814
+      m_SelectedIDs: 
+      m_LastClickedID: 0
       m_ExpandedIDs: 76faffffbefafffff4faffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -2628,8 +2628,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Simulator\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 251.2
-    y: 79.200005
+    x: 252.2
+    y: 24
     width: 790.8
     height: 477.2
   m_SerializedDataModeController:
@@ -2659,7 +2659,7 @@ MonoBehaviour:
   m_UseMipMap: 0
   m_SimulatorState:
     controlPanelVisible: 0
-    controlPanelWidth: 0
+    controlPanelWidth: NaN
     controlPanelFoldoutKeys:
     - UnityEditor.DeviceSimulation.ApplicationSettingsPlugin
     controlPanelFoldoutValues: 00
@@ -7509,7 +7509,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 582.4
+    y: 527.2
     width: 1043
     height: 187.59998
   m_SerializedDataModeController:
@@ -7553,7 +7553,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 69.19986}
     m_SelectedIDs: 9e9b0000
     m_LastClickedID: 39838
-    m_ExpandedIDs: 00000000889b00008a9b000000ca9a3bffffff7f
+    m_ExpandedIDs: 000000007299000074990000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -7582,7 +7582,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000889b00008a9b0000
+    m_ExpandedIDs: 000000007299000074990000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -7830,8 +7830,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Inspector\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1044
-    y: 79.200005
+    x: 1045
+    y: 24
     width: 491
     height: 690.8
   m_SerializedDataModeController:
