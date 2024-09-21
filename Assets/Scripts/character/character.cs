@@ -3,7 +3,7 @@ using System.Collections;
 using System;
 using UnityEngine.UIElements;
 using UnityEngine.InputSystem;
-public class character : MonoBehaviour {
+public class Character : MonoBehaviour {
 
     Animator animator;
 
@@ -14,8 +14,8 @@ public class character : MonoBehaviour {
 
     public GameObject[] KaratekaSprites;
 
-    public bool isLeft = false;
-    public bool inputEnabled;
+    private bool isLeft = false;
+    private bool inputEnabled = true;
 
     private InputAction actionUR;
     private InputAction actionUL;

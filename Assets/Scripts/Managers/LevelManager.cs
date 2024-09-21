@@ -23,7 +23,7 @@ public sealed class LevelManager : MonoBehaviour {
     public int HighScore;
     public int lifes = 3;
 
-    public character karateka;
+    public Character karateka;
     public bool loosedGame;
 
 	// Use this for initialization

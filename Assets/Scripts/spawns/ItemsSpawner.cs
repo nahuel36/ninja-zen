@@ -15,7 +15,7 @@ public class ItemsSpawner : MonoBehaviour {
     
     public string spawnerID = "DR";
 
-    public character actual_character;
+    public Character actual_character;
 
     void Start () {
         timeOfLastSpawn = 0;
