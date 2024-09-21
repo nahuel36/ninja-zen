@@ -8,8 +8,10 @@ using UnityEngine;
 namespace UnityStandardAssets.CrossPlatformInput
 {
     [ExecuteInEditMode]
-    public class MobileControlRig : MonoBehaviour
+    public class MobileControlRig : MonoBehaviour, UnityEditor.Build.IActiveBuildTargetChanged
     {
+        public int callbackOrder => throw new NotImplementedException();
+
         // this script enables or disables the child objects of a control rig
         // depending on whether the USE_MOBILE_INPUT define is declared.
 
@@ -30,7 +32,7 @@ namespace UnityStandardAssets.CrossPlatformInput
             if (Application.isPlaying) //if in the editor, need to check if we are playing, as start is also called just after exiting play
 #endif
             {
-                UnityEngine.EventSystems.EventSystem system = GameObject.FindObjectOfType<UnityEngine.EventSystems.EventSystem>();
+                UnityEngine.EventSystems.EventSystem system = GameObject.FindFirstObjectByType<UnityEngine.EventSystems.EventSystem>();
 
                 if (system == null)
                 {//the scene have no event system, spawn one
@@ -47,14 +49,12 @@ namespace UnityStandardAssets.CrossPlatformInput
         private void OnEnable()
         {
             EditorApplication.update += Update;
-            EditorUserBuildSettings.activeBuildTargetChanged += Update;
         }
 
 
         private void OnDisable()
         {
             EditorApplication.update -= Update;
-            EditorUserBuildSettings.activeBuildTargetChanged -= Update;
         }
 
 
@@ -81,6 +81,11 @@ namespace UnityStandardAssets.CrossPlatformInput
             {
                 t.gameObject.SetActive(enabled);
             }
+        }
+
+        public void OnActiveBuildTargetChanged(BuildTarget previousTarget, BuildTarget newTarget)
+        {
+            Update();
         }
     }
 }

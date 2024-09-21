@@ -10,7 +10,7 @@ namespace UnityStandardAssets.Utility
 
     [ExecuteInEditMode]
 #endif
-    public class PlatformSpecificContent : MonoBehaviour
+    public class PlatformSpecificContent : MonoBehaviour, UnityEditor.Build.IActiveBuildTargetChanged
     {
         private enum BuildTargetGroup
         {
@@ -22,6 +22,8 @@ namespace UnityStandardAssets.Utility
         [SerializeField] private GameObject[] m_Content = new GameObject[0];
         [SerializeField] private MonoBehaviour[] m_MonoBehaviours = new MonoBehaviour[0];
         [SerializeField] private bool m_ChildrenOfThisObject;
+
+        public int callbackOrder => throw new NotImplementedException();
 
 #if !UNITY_EDITOR
 	void OnEnable()
@@ -35,14 +37,12 @@ namespace UnityStandardAssets.Utility
         private void OnEnable()
         {
             EditorApplication.update += Update;
-            EditorUserBuildSettings.activeBuildTargetChanged += Update;
         }
 
 
         private void OnDisable()
         {
             EditorApplication.update -= Update;
-            EditorUserBuildSettings.activeBuildTargetChanged -= Update;
         }
 
         private void Update()
@@ -102,6 +102,11 @@ namespace UnityStandardAssets.Utility
                     monoBehaviour.enabled = enabled;
                 }
             }
+        }
+
+        public void OnActiveBuildTargetChanged(BuildTarget previousTarget, BuildTarget newTarget)
+        {
+            Update();
         }
     }
 }

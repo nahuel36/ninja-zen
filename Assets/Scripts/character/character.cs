@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
-
+using UnityEngine.UIElements;
+using UnityEngine.InputSystem;
 public class character : MonoBehaviour {
 
     Animator animator;
@@ -16,11 +17,49 @@ public class character : MonoBehaviour {
     public bool isLeft = false;
     public bool inputEnabled;
 
+    private InputAction actionUR;
+    private InputAction actionUL;
+    private InputAction actionDR;
+    private InputAction actionDL;
+
+
+    public ItemsSpawner spawnerUR;
+    public ItemsSpawner spawnerUL;
+    public ItemsSpawner spawnerDR;
+    public ItemsSpawner spawnerDL;
+
+
     public void Start() {
         inputEnabled = true;
         animator = GetComponent<Animator>();
         isLeft = false;
         LevelManager.looseGame += disableInput;
+
+        actionUR = InputSystem.actions.FindAction("UR");
+        actionUL = InputSystem.actions.FindAction("UL");
+        actionDR = InputSystem.actions.FindAction("DR");
+        actionDL = InputSystem.actions.FindAction("DL");
+
+    }
+
+    public void Update()
+    {
+        if (actionUR.IsPressed())
+        {
+            Punch("UR");
+        }
+        if (actionUL.IsPressed())
+        {
+            Punch("UL");
+        }
+        if (actionDR.IsPressed())
+        {
+            Punch("DR");
+        }
+        if (actionDL.IsPressed())
+        {
+            Punch("DL");
+        }
     }
 
     public void changeSprite(Sprite up, Sprite down, Sprite iddle)
@@ -53,6 +92,7 @@ public class character : MonoBehaviour {
 
         if (direction == "UL")
         {
+            spawnerUL.Break();
             animator.SetTrigger("UpAttack");
             if (!isLeft)
             {
@@ -62,6 +102,7 @@ public class character : MonoBehaviour {
         }
         else if (direction == "UR")
         {
+            spawnerUR.Break();
             animator.SetTrigger("UpAttack");
             if (isLeft)
             {
@@ -71,6 +112,7 @@ public class character : MonoBehaviour {
         }
         else if (direction == "DL")
         {
+            spawnerDL.Break();
             animator.SetTrigger("MiddleAttack");
             if (!isLeft)
             {
@@ -81,6 +123,7 @@ public class character : MonoBehaviour {
         }
         else if (direction == "DR")
         {
+            spawnerDR.Break();
             animator.SetTrigger("MiddleAttack");
             if (isLeft)
             {

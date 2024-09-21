@@ -1,0 +1,94 @@
+{
+    "name": "NinjaZenControls",
+    "maps": [
+        {
+            "name": "map",
+            "id": "6ea12aef-dbe5-4793-882b-a37b123038c3",
+            "actions": [
+                {
+                    "name": "UR",
+                    "type": "Button",
+                    "id": "361f9c88-86c6-4602-96ec-5f1f97a0f5cc",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "UL",
+                    "type": "Button",
+                    "id": "b7209b66-84b9-4bef-9fe4-7c6ead3613ce",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "DR",
+                    "type": "Button",
+                    "id": "df780005-fbec-4f75-af5d-e6448b1f2e69",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "DL",
+                    "type": "Button",
+                    "id": "a7a2ddc0-4be6-41d0-aec6-62d918642904",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "8a1f9d85-39d4-44ad-9b0e-d70745cc098b",
+                    "path": "<Keyboard>/numpad9",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UR",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4aae089b-6984-461b-a746-1778cd9ac9f9",
+                    "path": "<Keyboard>/numpad7",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UL",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "804ff239-a840-4a08-a061-5e4166d59441",
+                    "path": "<Keyboard>/numpad3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DR",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5a1bc077-961a-4328-a9e6-ad37b0f91141",
+                    "path": "<Keyboard>/numpad1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DL",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using UnityEngine.SceneManagement;
 
 public enum DIFFICULTY
     {
@@ -68,11 +68,11 @@ public sealed class LevelManager : MonoBehaviour {
     }
 
     public void RestartLevel() {
-        Application.LoadLevel(Application.loadedLevel);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void GoToMenu() {
-        Application.LoadLevel("intro");
+        SceneManager.LoadScene("intro");
     }
 	
 }
