@@ -44,19 +44,19 @@ public class Character : MonoBehaviour {
 
     public void Update()
     {
-        if (actionUR.IsPressed())
+        if (actionUR.WasPressedThisFrame())
         {
             Punch("UR");
         }
-        if (actionUL.IsPressed())
+        if (actionUL.WasPressedThisFrame())
         {
             Punch("UL");
         }
-        if (actionDR.IsPressed())
+        if (actionDR.WasPressedThisFrame())
         {
             Punch("DR");
         }
-        if (actionDL.IsPressed())
+        if (actionDL.WasPressedThisFrame())
         {
             Punch("DL");
         }
