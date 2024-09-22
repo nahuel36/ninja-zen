@@ -48,15 +48,15 @@ public class Character : MonoBehaviour {
         {
             Punch("UR");
         }
-        if (actionUL.WasPressedThisFrame())
+        else if (actionUL.WasPressedThisFrame())
         {
             Punch("UL");
         }
-        if (actionDR.WasPressedThisFrame())
+        else if (actionDR.WasPressedThisFrame())
         {
             Punch("DR");
         }
-        if (actionDL.WasPressedThisFrame())
+        else if (actionDL.WasPressedThisFrame())
         {
             Punch("DL");
         }
