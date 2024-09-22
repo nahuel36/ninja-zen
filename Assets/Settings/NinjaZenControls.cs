@@ -71,7 +71,7 @@ public partial class @NinjaZenControls: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/numpad9"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";Control Scheme"",
                     ""action"": ""UR"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -82,7 +82,7 @@ public partial class @NinjaZenControls: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/#(W)"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";Control Scheme"",
                     ""action"": ""UR"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -93,7 +93,7 @@ public partial class @NinjaZenControls: IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";Control Scheme"",
                     ""action"": ""UR"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -104,7 +104,7 @@ public partial class @NinjaZenControls: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/numpad7"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";Control Scheme"",
                     ""action"": ""UL"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -115,7 +115,7 @@ public partial class @NinjaZenControls: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/#(Q)"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";Control Scheme"",
                     ""action"": ""UL"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -126,7 +126,7 @@ public partial class @NinjaZenControls: IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/leftTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";Control Scheme"",
                     ""action"": ""UL"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -137,7 +137,7 @@ public partial class @NinjaZenControls: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/numpad3"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";Control Scheme"",
                     ""action"": ""DR"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -148,7 +148,7 @@ public partial class @NinjaZenControls: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/#(S)"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";Control Scheme"",
                     ""action"": ""DR"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -159,7 +159,7 @@ public partial class @NinjaZenControls: IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/rightShoulder"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";Control Scheme"",
                     ""action"": ""DR"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -170,7 +170,7 @@ public partial class @NinjaZenControls: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/numpad1"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";Control Scheme"",
                     ""action"": ""DL"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -181,7 +181,7 @@ public partial class @NinjaZenControls: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/#(A)"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";Control Scheme"",
                     ""action"": ""DL"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -192,7 +192,7 @@ public partial class @NinjaZenControls: IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/leftShoulder"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";Control Scheme"",
                     ""action"": ""DL"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -200,7 +200,24 @@ public partial class @NinjaZenControls: IInputActionCollection2, IDisposable
             ]
         }
     ],
-    ""controlSchemes"": []
+    ""controlSchemes"": [
+        {
+            ""name"": ""Control Scheme"",
+            ""bindingGroup"": ""Control Scheme"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Gamepad>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                },
+                {
+                    ""devicePath"": ""<Keyboard>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        }
+    ]
 }");
         // map
         m_map = asset.FindActionMap("map", throwIfNotFound: true);
@@ -340,6 +357,15 @@ public partial class @NinjaZenControls: IInputActionCollection2, IDisposable
         }
     }
     public MapActions @map => new MapActions(this);
+    private int m_ControlSchemeSchemeIndex = -1;
+    public InputControlScheme ControlSchemeScheme
+    {
+        get
+        {
+            if (m_ControlSchemeSchemeIndex == -1) m_ControlSchemeSchemeIndex = asset.FindControlSchemeIndex("Control Scheme");
+            return asset.controlSchemes[m_ControlSchemeSchemeIndex];
+        }
+    }
     public interface IMapActions
     {
         void OnUR(InputAction.CallbackContext context);

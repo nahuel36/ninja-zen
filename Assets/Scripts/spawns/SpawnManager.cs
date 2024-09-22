@@ -29,7 +29,7 @@ public class SpawnManager : MonoBehaviour {
 	void Update () {
         if (!canSpawn) return;
 
-        if (Time.time < initialSpawnTime) return;
+        if (Time.timeSinceLevelLoad < initialSpawnTime) return;
 
         if(lastSpawnTime > spawnTime)
         {
