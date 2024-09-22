@@ -10,7 +10,7 @@ public class SpawnManager : MonoBehaviour {
 
     public float spawnTime = 0.5f;
     public float lastSpawnTime = 0;
-
+    public float initialSpawnTime = 4;
    // public GameObject ExampleBottle;
 
     public bool canSpawn;
@@ -29,6 +29,8 @@ public class SpawnManager : MonoBehaviour {
 	void Update () {
         if (!canSpawn) return;
 
+        if (Time.time < initialSpawnTime) return;
+
         if(lastSpawnTime > spawnTime)
         {
             int rand = UnityEngine.Random.Range(0, 4);
@@ -43,8 +45,8 @@ public class SpawnManager : MonoBehaviour {
 
             lastSpawnTime = 0;
 
-            if(spawnTime > 2f)
-                spawnTime -= Time.deltaTime;
+            if(spawnTime > 0.8f)
+                spawnTime -= 0.2f;
         }
         lastSpawnTime += Time.deltaTime;
 
