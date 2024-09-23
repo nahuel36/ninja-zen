@@ -29,6 +29,7 @@ public class Character : MonoBehaviour {
 
     [SerializeField] PlaySound kickSounds;
     [SerializeField] PlaySound hurtSound;
+    [SerializeField] PlaySound bottleCrashSound;
 
     public void Start() {
         inputEnabled = true;
@@ -152,6 +153,7 @@ public class Character : MonoBehaviour {
 
     public void KickExplode(string direction)
     {
+        bottleCrashSound.Play();
         if (direction == "UL")
         {
             ExplodeUL.GetComponent<ParticleSystem>().Play();
