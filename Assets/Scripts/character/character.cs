@@ -22,8 +22,6 @@ public class Character : MonoBehaviour {
     private InputAction actionDR;
     private InputAction actionDL;
 
-    [SerializeField] PlayerInput playerInput;
-
     public ItemsSpawner spawnerUR;
     public ItemsSpawner spawnerUL;
     public ItemsSpawner spawnerDR;
