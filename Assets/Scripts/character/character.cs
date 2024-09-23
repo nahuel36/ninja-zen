@@ -22,24 +22,25 @@ public class Character : MonoBehaviour {
     private InputAction actionDR;
     private InputAction actionDL;
 
+    [SerializeField] PlayerInput playerInput;
 
     public ItemsSpawner spawnerUR;
     public ItemsSpawner spawnerUL;
     public ItemsSpawner spawnerDR;
     public ItemsSpawner spawnerDL;
 
+    [SerializeField] PlaySound kickSounds;
 
     public void Start() {
         inputEnabled = true;
         animator = GetComponent<Animator>();
         isLeft = false;
         LevelManager.looseGame += disableInput;
-
+        
         actionUR = InputSystem.actions.FindAction("UR");
         actionUL = InputSystem.actions.FindAction("UL");
         actionDR = InputSystem.actions.FindAction("DR");
         actionDL = InputSystem.actions.FindAction("DL");
-
     }
 
     public void Update()
@@ -89,6 +90,8 @@ public class Character : MonoBehaviour {
     {
         if (!canPunch())
             return;
+
+        kickSounds.Play();
 
         if (direction == "UL")
         {
