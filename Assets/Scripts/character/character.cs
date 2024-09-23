@@ -28,6 +28,7 @@ public class Character : MonoBehaviour {
     public ItemsSpawner spawnerDL;
 
     [SerializeField] PlaySound kickSounds;
+    [SerializeField] PlaySound hurtSound;
 
     public void Start() {
         inputEnabled = true;
@@ -172,7 +173,9 @@ public class Character : MonoBehaviour {
     public void Hurt() {
 
         animator.SetTrigger("Hurt");
-
+        if(LevelManager.Instance.lifes > 0)
+            hurtSound.Play();
+        
     }
 
 
