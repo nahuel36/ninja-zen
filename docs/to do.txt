@@ -1,0 +1,54 @@
+TO DO
+1. creditos en ingame (animations activar y desactivar)
+2. creditos en itchio
+3. botones ui de patear
+34. start y restart con teclas y joystick
+35. que no patee en 321
+AL TERMINAR
+build optimizada
+
+PENDIENTE
+6?. poner bloom en particulas
+30. linea izquierda ninja
+33. direccion de particulas
+18. algo distinto para el menu
+38. sprite circulo you lose con major definicion
+32. optimizer urp
+38? boton share
+20. velocidad rayos en celu
+15. tiempos de patada mas largos
+19. letras ingame mejorar
+
+DONE
+41. GPUResidentDrawer Kernel not present, please ensure the player settings includes a supported graphics API
+40. music loop
+39. tamaños ui
+37. sonido herido
+36. sonido you loose
+31. musica
+29. presionar todo a la vez y mantener apretado con tap
+28. en webgl primer golpe no se ve
+27. licencias shadertoy
+26. que no se pueda mantener apretado
+25. que no se pueda presionar todo a la vez
+24. otros warnings
+23. joysticks y otras teclas
+22. Render Graph API is disabled
+21. poner link de ninja zen en shadertoy
+17. patadas con teclado
+16. https://thebookofshaders.com/06/ que los colores sean Azul y rosa
+14. mejor vignette 1 o 2?
+13. pasar shaders a shadertoy
+12. buildear webgl y probar en celu
+11. mainmenu delay luego de start
+10. mainmenu sonido ninja tiempo
+9. sonidos botellas
+8. sonidos patadas
+7. sonido 321 fight
+5. poner bloom en botellas
+4. ajustar velocidades botellas
+
+Que tal? vuelvo con mi juego del ninja pero esta vez entero. Lo subí­ a itch.io, cambié el fondo multicolor por una interpolacion entre dos colores, y ahora solo giran los rayos. Se puede jugar desde el celular o pc.
+En la descripcion del juego estan los links a los sonidos, a los shaders que usa y al código fuente del juego.
+Tengo experiencia en otros juegos, estuve en una empresa y hace 6 años que trabajo en otra, pero esto apunta a ser algo hecho de forma independiente, y es algo simple y práctico. 
+No soy muy bueno con el arte, a lo que mas apunto es a ganar experiencia en programación.

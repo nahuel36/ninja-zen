@@ -8,7 +8,11 @@ vidrio, libre
 https://freesound.org/people/creapersound/sounds/209996/
 gritos ninja, libre
 https://freesound.org/people/oldedgar/sounds/97977/
-321fight
+321fight, libre
 https://freesound.org/people/elliottdj/sounds/685903/
-musica
-https://freemusicarchive.org/music/Pocketmaster/Residue/03_-_Ninja_Maggots/
+musica, pide creditos
+https://opengameart.org/content/8-bit-ninja
+loose, libre
+https://freesound.org/people/cabled_mess/sounds/371451/
+hurt, libre
+https://freesound.org/people/GameAudio/sounds/220188/
