@@ -50,5 +50,5 @@ DONE
 
 Que tal? vuelvo con mi juego del ninja pero esta vez entero. Lo subí­ a itch.io, cambié el fondo multicolor por una interpolacion entre dos colores, y ahora solo giran los rayos. Se puede jugar desde el celular o pc.
 En la descripcion del juego estan los links a los sonidos, a los shaders que usa y al código fuente del juego.
-Tengo experiencia en otros juegos, estuve en una empresa y hace 6 años que trabajo en otra, pero esto apunta a ser algo hecho de forma independiente, y es algo simple y práctico. 
+Tengo experiencia en otros juegos, estuve en una empresa y hace 6 años que trabajo en otra, pero esto apunta a ser algo hecho de forma independiente, y algo simple y práctico. 
 No soy muy bueno con el arte, a lo que mas apunto es a ganar experiencia en programación.
