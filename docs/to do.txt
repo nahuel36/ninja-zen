@@ -3,7 +3,8 @@ TO DO
 2. creditos en itchio
 3. botones ui de patear
 34. start y restart con teclas y joystick
-35. que no patee en 321
+44. arreglar botones de patear
+
 AL TERMINAR
 build optimizada
 
@@ -18,13 +19,16 @@ PENDIENTE
 20. velocidad rayos en celu
 15. tiempos de patada mas largos
 19. letras ingame mejorar
+43. shader karateka en shadertoy
 
 DONE
+42. oscurecer bloom
 41. GPUResidentDrawer Kernel not present, please ensure the player settings includes a supported graphics API
 40. music loop
 39. tamaños ui
 37. sonido herido
 36. sonido you loose
+35. que no patee en 321
 31. musica
 29. presionar todo a la vez y mantener apretado con tap
 28. en webgl primer golpe no se ve

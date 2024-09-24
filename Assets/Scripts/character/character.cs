@@ -7,12 +7,12 @@ public class Character : MonoBehaviour {
 
     Animator animator;
 
-    public GameObject ExplodeUL;
-    public GameObject ExplodeUR;
-    public GameObject ExplodeDL;
-    public GameObject ExplodeDR;
+    [SerializeField] GameObject ExplodeUL;
+    [SerializeField] GameObject ExplodeUR;
+    [SerializeField] GameObject ExplodeDL;
+    [SerializeField] GameObject ExplodeDR;
 
-    public GameObject[] KaratekaSprites;
+    [SerializeField] GameObject[] KaratekaSprites;
 
     private bool isLeft = false;
     private bool inputEnabled = true;
@@ -22,10 +22,12 @@ public class Character : MonoBehaviour {
     private InputAction actionDR;
     private InputAction actionDL;
 
-    public ItemsSpawner spawnerUR;
-    public ItemsSpawner spawnerUL;
-    public ItemsSpawner spawnerDR;
-    public ItemsSpawner spawnerDL;
+    [SerializeField] ItemsSpawner spawnerUR;
+    [SerializeField] ItemsSpawner spawnerUL;
+    [SerializeField] ItemsSpawner spawnerDR;
+    [SerializeField] ItemsSpawner spawnerDL;
+
+    [SerializeField] SpawnManager spawnManager;
 
     [SerializeField] PlaySound kickSounds;
     [SerializeField] PlaySound hurtSound;
@@ -45,6 +47,8 @@ public class Character : MonoBehaviour {
 
     public void Update()
     {
+        
+
         if (actionUR.WasPressedThisFrame())
         {
             Punch("UR");
@@ -74,7 +78,7 @@ public class Character : MonoBehaviour {
     }
 
     public bool canPunch() {
-        return (inputEnabled && animator.GetCurrentAnimatorStateInfo(0).IsName("Iddle"));
+        return (inputEnabled && animator.GetCurrentAnimatorStateInfo(0).IsName("Iddle") && spawnManager.IsSpawning);
     }
 
     public void rotateSprites()
