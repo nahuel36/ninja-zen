@@ -1,7 +1,6 @@
 TO DO
 1. creditos en ingame (animations activar y desactivar)
 2. creditos en itchio
-34. start y restart con teclas y joystick
 
 AL TERMINAR
 build optimizada
@@ -28,6 +27,7 @@ DONE
 37. sonido herido
 36. sonido you loose
 35. que no patee en 321
+34. start y restart con teclas y joystick
 31. musica
 29. presionar todo a la vez y mantener apretado con tap
 28. en webgl primer golpe no se ve
