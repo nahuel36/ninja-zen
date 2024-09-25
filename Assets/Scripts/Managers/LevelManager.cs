@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public enum DIFFICULTY
     {
@@ -23,15 +24,23 @@ public sealed class LevelManager : MonoBehaviour {
     public int HighScore;
     public int lifes = 3;
 
-    public Character karateka;
+    [SerializeField] Character karateka;
     public bool loosedGame;
-
+    private InputAction accept;
 	// Use this for initialization
 	void Start () {
         loosedGame = false;
         Instance = this;
         ActualScore = 0;
         HighScore = PlayerPrefs.GetInt("MaxScore");
+        accept = InputSystem.actions.FindAction("Accept");
+    }
+    void Update () 
+    {
+        if (loosedGame && accept.WasPressedThisFrame())
+        { 
+            RestartLevel();
+        }
     }
 
     public void hurtKarateka(int hurtAmount) {

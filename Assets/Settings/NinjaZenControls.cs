@@ -62,6 +62,15 @@ public partial class @NinjaZenControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Accept"",
+                    ""type"": ""Button"",
+                    ""id"": ""488b4a36-7f6f-4e58-97c7-e0dab7c21f37"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -196,6 +205,28 @@ public partial class @NinjaZenControls: IInputActionCollection2, IDisposable
                     ""action"": ""DL"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f2627bd7-fda7-4a2a-8df7-65d5ed802811"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard"",
+                    ""action"": ""Accept"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2418eb1d-08be-4284-b584-8aa924752d03"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""Accept"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -231,6 +262,7 @@ public partial class @NinjaZenControls: IInputActionCollection2, IDisposable
         m_map_UL = m_map.FindAction("UL", throwIfNotFound: true);
         m_map_DR = m_map.FindAction("DR", throwIfNotFound: true);
         m_map_DL = m_map.FindAction("DL", throwIfNotFound: true);
+        m_map_Accept = m_map.FindAction("Accept", throwIfNotFound: true);
     }
 
     ~@NinjaZenControls()
@@ -301,6 +333,7 @@ public partial class @NinjaZenControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_map_UL;
     private readonly InputAction m_map_DR;
     private readonly InputAction m_map_DL;
+    private readonly InputAction m_map_Accept;
     public struct MapActions
     {
         private @NinjaZenControls m_Wrapper;
@@ -309,6 +342,7 @@ public partial class @NinjaZenControls: IInputActionCollection2, IDisposable
         public InputAction @UL => m_Wrapper.m_map_UL;
         public InputAction @DR => m_Wrapper.m_map_DR;
         public InputAction @DL => m_Wrapper.m_map_DL;
+        public InputAction @Accept => m_Wrapper.m_map_Accept;
         public InputActionMap Get() { return m_Wrapper.m_map; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -330,6 +364,9 @@ public partial class @NinjaZenControls: IInputActionCollection2, IDisposable
             @DL.started += instance.OnDL;
             @DL.performed += instance.OnDL;
             @DL.canceled += instance.OnDL;
+            @Accept.started += instance.OnAccept;
+            @Accept.performed += instance.OnAccept;
+            @Accept.canceled += instance.OnAccept;
         }
 
         private void UnregisterCallbacks(IMapActions instance)
@@ -346,6 +383,9 @@ public partial class @NinjaZenControls: IInputActionCollection2, IDisposable
             @DL.started -= instance.OnDL;
             @DL.performed -= instance.OnDL;
             @DL.canceled -= instance.OnDL;
+            @Accept.started -= instance.OnAccept;
+            @Accept.performed -= instance.OnAccept;
+            @Accept.canceled -= instance.OnAccept;
         }
 
         public void RemoveCallbacks(IMapActions instance)
@@ -387,5 +427,6 @@ public partial class @NinjaZenControls: IInputActionCollection2, IDisposable
         void OnUL(InputAction.CallbackContext context);
         void OnDR(InputAction.CallbackContext context);
         void OnDL(InputAction.CallbackContext context);
+        void OnAccept(InputAction.CallbackContext context);
     }
 }
