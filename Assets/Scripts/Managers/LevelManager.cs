@@ -27,19 +27,25 @@ public sealed class LevelManager : MonoBehaviour {
     [SerializeField] Character karateka;
     public bool loosedGame;
     private InputAction accept;
-	// Use this for initialization
-	void Start () {
+    private InputAction goToMenu;
+    // Use this for initialization
+    void Start () {
         loosedGame = false;
         Instance = this;
         ActualScore = 0;
         HighScore = PlayerPrefs.GetInt("MaxScore");
         accept = InputSystem.actions.FindAction("Accept");
+        goToMenu = InputSystem.actions.FindAction("Other");
     }
     void Update () 
     {
         if (loosedGame && accept.WasPressedThisFrame())
         { 
             RestartLevel();
+        }
+        if (loosedGame && goToMenu.WasPressedThisFrame())
+        {
+            GoToMenu();
         }
     }
 
