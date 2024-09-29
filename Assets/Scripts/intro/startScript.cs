@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class startScript : MonoBehaviour
 {
     InputAction accept;
+    InputAction credits;
     [SerializeField] float splashTime = 3;
     [SerializeField] Animator menuAnimator;
     bool pressedstart = false;
@@ -12,6 +13,7 @@ public class startScript : MonoBehaviour
     {
         pressedstart = false;
         accept = InputSystem.actions.FindAction("Accept");
+        credits = InputSystem.actions.FindAction("Other");
         // Resources.LoadAll("backgrounds");
     }
 
@@ -24,6 +26,11 @@ public class startScript : MonoBehaviour
             pressedstart = true;
             menuAnimator.SetTrigger("start");
         }
+        if (credits.WasPressedThisFrame())
+        {
+            pressedstart = true;
+            GoToCredits();
+        }
     }
 
     public void pressedStart()
@@ -31,6 +38,9 @@ public class startScript : MonoBehaviour
         SceneManager.LoadScene("game");
     }
 
-
+    public void GoToCredits() 
+    {
+        SceneManager.LoadScene("credits");
+    }
 	
 }
