@@ -243,7 +243,7 @@ public partial class @NinjaZenControls: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/backspace"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";Keyboard"",
                     ""action"": ""Other"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -254,7 +254,7 @@ public partial class @NinjaZenControls: IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";Gamepad"",
                     ""action"": ""Other"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
