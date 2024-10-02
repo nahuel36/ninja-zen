@@ -1,6 +1,5 @@
 TO DO
-1. creditos en ingame (animations activar y desactivar)
-2. creditos en itchio
+45. logo de lab36 por build settings 
 
 AL TERMINAR
 build optimizada
@@ -51,6 +50,8 @@ DONE
 5. poner bloom en botellas
 4. ajustar velocidades botellas
 3. botones ui de patear
+2. creditos en itchio
+1. creditos en ingame (animations activar y desactivar)
 
 Que tal? vuelvo con mi juego del ninja pero esta vez entero. Lo subí­ a itch.io, cambié el fondo multicolor por una interpolacion entre dos colores, y ahora solo giran los rayos. Se puede jugar desde el celular o pc.
 En la descripcion del juego estan los links a los sonidos, a los shaders que usa y al código fuente del juego.
