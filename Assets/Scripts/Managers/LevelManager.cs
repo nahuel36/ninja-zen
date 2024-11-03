@@ -33,7 +33,8 @@ public sealed class LevelManager : MonoBehaviour {
         loosedGame = false;
         Instance = this;
         ActualScore = 0;
-        HighScore = PlayerPrefs.GetInt("MaxScore");
+        //HighScore = PlayerPrefs.GetInt("MaxScore");
+        HighScore = UserDataManager.GetInt("MaxScore");
         accept = InputSystem.actions.FindAction("Accept");
         goToMenu = InputSystem.actions.FindAction("Other");
     }
@@ -77,7 +78,8 @@ public sealed class LevelManager : MonoBehaviour {
         if(HighScore < ActualScore)
         {
             HighScore = ActualScore;
-            PlayerPrefs.SetInt("MaxScore", ActualScore);
+            UserDataManager.SetInt("MaxScore", ActualScore);
+            //PlayerPrefs.SetInt("MaxScore", ActualScore);
             
         }
     }
