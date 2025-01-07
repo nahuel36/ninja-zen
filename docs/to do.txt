@@ -7,6 +7,7 @@ AL TERMINAR
 build optimizada
 
 PENDIENTE
+46. rayos con zigzags
 6?. poner bloom en particulas
 30. linea izquierda ninja
 33. direccion de particulas
@@ -18,9 +19,9 @@ PENDIENTE
 15. tiempos de patada mas largos
 19. letras ingame mejorar
 43. shader karateka en shadertoy
-45. logo de lab36 por build settings 
 
 DONE
+45. logo de lab36 por build settings 
 44. arreglar botones de patear
 42. oscurecer bloom
 41. GPUResidentDrawer Kernel not present, please ensure the player settings includes a supported graphics API
