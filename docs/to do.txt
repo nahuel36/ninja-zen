@@ -1,4 +1,7 @@
 47. zoom y shake al pegar
+48. onda expansiva al pegar botella
+49. line render en botellas
+50. alternar rayos o agregar algun efecto extra
 
 AL TERMINAR
 build optimizada
