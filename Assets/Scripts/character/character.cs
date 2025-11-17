@@ -32,6 +32,7 @@ public class Character : MonoBehaviour {
     [SerializeField] PlaySound kickSounds;
     [SerializeField] PlaySound hurtSound;
     [SerializeField] PlaySound bottleCrashSound;
+    [SerializeField] string inputActionMap = "map";
 
     public void Start() {
         inputEnabled = true;
@@ -39,10 +40,10 @@ public class Character : MonoBehaviour {
         isLeft = false;
         LevelManager.looseGame += disableInput;
         
-        actionUR = InputSystem.actions.FindAction("UR");
-        actionUL = InputSystem.actions.FindAction("UL");
-        actionDR = InputSystem.actions.FindAction("DR");
-        actionDL = InputSystem.actions.FindAction("DL");
+        actionUR = InputSystem.actions.FindActionMap(inputActionMap).FindAction("UR");
+        actionUL = InputSystem.actions.FindActionMap(inputActionMap).FindAction("UL");
+        actionDR = InputSystem.actions.FindActionMap(inputActionMap).FindAction("DR");
+        actionDL = InputSystem.actions.FindActionMap(inputActionMap).FindAction("DL");
     }
 
 

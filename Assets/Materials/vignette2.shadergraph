@@ -677,7 +677,7 @@
     "m_StageCapability": 3,
     "m_BareResource": false,
     "m_Texture": {
-        "m_SerializedTexture": "{\"texture\":{\"instanceID\":0}}",
+        "m_SerializedTexture": "",
         "m_Guid": ""
     },
     "m_DefaultType": 0
@@ -1687,12 +1687,24 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
+    "m_PerRendererData": false,
+    "m_customAttributes": [],
     "m_Value": 300.0,
     "m_FloatType": 0,
     "m_RangeValues": {
         "x": 0.0,
         "y": 1.0
-    }
+    },
+    "m_SliderType": 0,
+    "m_SliderPower": 3.0,
+    "m_EnumType": 0,
+    "m_CSharpEnumString": "",
+    "m_EnumNames": [
+        "Default"
+    ],
+    "m_EnumValues": [
+        0
+    ]
 }
 
 {
@@ -2248,8 +2260,8 @@
     "m_ObjectId": "950390b956ac406fa5af1f249798a302",
     "m_Title": "SUV",
     "m_Position": {
-        "x": 10.0,
-        "y": 10.0
+        "x": 261.5999755859375,
+        "y": 902.4000244140625
     }
 }
 
@@ -2730,8 +2742,8 @@
     "m_ObjectId": "d5fa30f6d1064a80b2df7dbc4a93c122",
     "m_Title": "UV",
     "m_Position": {
-        "x": 10.0,
-        "y": 10.0
+        "x": -548.0,
+        "y": 204.00003051757813
     }
 }
 
